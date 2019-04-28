@@ -1,0 +1,20 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="PAP_C_DISP_TESTER.VerInfo"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="1060" Height="930" Loaded="Page_Loaded">
+
+    <Canvas>
+        <Canvas.Effect>
+            <DropShadowEffect Color="#FF41BDEC" BlurRadius="30" Direction="0" ShadowDepth="0"/>
+        </Canvas.Effect>
+        <TextBlock x:Name="tbAssemblyVer" TextWrapping="Wrap" Text="アセンブリVer 1.50" FontSize="24" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="174" Canvas.Left="32" FontFamily="Meiryo UI"/>
+        <TextBlock TextWrapping="Wrap" Text="PAP-C表示基板 検査システム" FontSize="60" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="30" Canvas.Left="32" FontFamily="Meiryo UI"/>
+        <TextBlock x:Name="tbParameterVer" TextWrapping="Wrap" Text="パラメータファイルVer 3.0" FontSize="24" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Canvas.Top="142" Canvas.Left="32" FontFamily="Meiryo UI"/>
+        <TextBlock TextWrapping="Wrap" 
+		Text="警告:この製品は、著作権に関する法律により保護されています。&#10; この製品の全部または一部を無断で複製したり、無断で複製物を頒布すると、&#10;著作権の侵害になりますのでご注意ください。" Foreground="White" FontSize="20" Canvas.Left="32" Canvas.Top="250" Height="93"/>
+    </Canvas>
+</Page>

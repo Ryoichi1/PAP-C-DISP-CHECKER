@@ -1,0 +1,382 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="PAP_C_DISP_TESTER.Camera2Conf"
+	xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Height="663" Width="1170" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <Style TargetType="Label">
+            <!--<Style.Setters>コンテンツプロパティのため省略可能-->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Opacity" Value="0.7"/>
+            <!--<Setter Property="Effect">
+				<Setter.Value>
+					<DropShadowEffect Direction="0" Color="Aqua"  BlurRadius="10" ShadowDepth="0"/>
+				</Setter.Value>
+			</Setter>-->
+        </Style>
+
+
+    </Page.Resources>
+    <Canvas>
+        <Canvas Height="322" Width="361" Canvas.Left="751" Canvas.Top="10">
+            <Border BorderBrush="#FF00DCFF" BorderThickness="1" Height="322" Width="356"/>
+            <Label Content="カメラプロパティ" Height="24" Canvas.Left="6" Canvas.Top="10" Width="106" Foreground="#FF0EC2D4" BorderBrush="{x:Null}" Padding="0"/>
+            <TextBlock Height="17" Canvas.Left="24" TextWrapping="Wrap" Canvas.Top="43" Width="47" Foreground="White" FontSize="14" Text="明るさ"/>
+            <TextBlock Height="21" Canvas.Left="21" TextWrapping="Wrap" Canvas.Top="62" Width="48" Foreground="White" FontSize="14" Text="ｺﾝﾄﾗｽﾄ"/>
+            <TextBlock Height="21" Canvas.Left="21" TextWrapping="Wrap" Canvas.Top="81" Width="48" Foreground="White" FontSize="14" Text="色合い"/>
+            <TextBlock Height="21" Canvas.Left="15" TextWrapping="Wrap" Canvas.Top="101" Width="57" Foreground="White" FontSize="14" Text="鮮やかさ"/>
+            <TextBlock Height="21" Canvas.Left="18" TextWrapping="Wrap" Canvas.Top="118" Width="48" Foreground="White" FontSize="14" Text="鮮明度"/>
+            <TextBlock Height="21" Canvas.Left="30" TextWrapping="Wrap" Canvas.Top="141" Width="31" Foreground="White" FontSize="14" Text="ｶﾞﾝﾏ"/>
+            <TextBlock Height="21" Canvas.Left="30" TextWrapping="Wrap" Canvas.Top="160" Width="32" Foreground="White" FontSize="14" Text="露出"/>
+            <TextBlock Height="21" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="182" Width="66" Foreground="White" FontSize="14" Text="ﾎﾜｲﾄﾊﾞﾗﾝｽ"/>
+            <TextBlock Height="21" Canvas.Left="11" TextWrapping="Wrap" Canvas.Top="203" Width="56" Foreground="White" FontSize="14" Text="傾き補正"/>
+            <TextBlock Height="21" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="224" Width="71" Foreground="White" FontSize="14" Text="二値化Lev"/>
+            <TextBlock Height="21" Canvas.Left="11" TextWrapping="Wrap" Canvas.Top="245" Width="61" Foreground="White" FontSize="14" Text="拡張回数"/>
+            <TextBlock Height="21" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="267" Width="60" Foreground="White" FontSize="14" Text="収縮回数"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropB}" Canvas.Top="40" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="16" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropC}" Canvas.Top="60" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropH}" Canvas.Top="80" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropS}" Canvas.Top="100" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropP}" Canvas.Top="120" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropY}" Canvas.Top="140" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropE}" Canvas.Top="160" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropW}" Canvas.Top="181" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCamPropTheta}" Canvas.Top="202" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderBinLev}" Canvas.Top="223" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderOpenCnt}" Canvas.Top="245" Width="60" Foreground="White" FontSize="14"/>
+            <TextBlock Height="21" Canvas.Left="286" TextWrapping="Wrap" Text="{Binding Value, ElementName=sliderCloseCnt}" Canvas.Top="266" Width="60" Foreground="White" FontSize="14"/>
+
+            <Slider x:Name="sliderCamPropP" Height="8" Canvas.Left="77" Canvas.Top="124" Width="199" Value="{Binding Sharpness}" IsSnapToTickEnabled="True" Maximum="7" Minimum="1" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCamPropY" Height="8" Canvas.Left="76" Canvas.Top="144" Width="200" Maximum="300" Value="{Binding Gamma}" IsSnapToTickEnabled="True" Minimum="100" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCamPropC" Height="8" Canvas.Left="77" Canvas.Top="64" Width="199" Maximum="95" Value="{Binding Contrast}" IsSnapToTickEnabled="True" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCamPropH" Height="8" Canvas.Left="76" Canvas.Top="84" Width="199" Maximum="2000" Minimum="-2000" Value="{Binding Hue}" IsSnapToTickEnabled="True" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCamPropS" Height="8" Canvas.Left="77" Canvas.Top="104" Width="199" Value="{Binding Saturation}" IsSnapToTickEnabled="True" Maximum="100" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCamPropB" Height="8" Canvas.Left="76" Canvas.Top="45" Width="200" Minimum="-64" Value="{Binding Brightness}" IsSnapToTickEnabled="True" Maximum="64" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCamPropE" Height="8" Canvas.Left="76" Canvas.Top="164" Width="199" Maximum="0" Minimum="-7" Value="{Binding Exposure}" IsSnapToTickEnabled="True" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCamPropW" Height="8" Canvas.Left="76" Canvas.Top="185" Width="199" Maximum="6500" Minimum="2800" Value="{Binding Wb}" IsSnapToTickEnabled="True" Style="{DynamicResource FlatSlider}" SmallChange="1"/>
+            <Slider x:Name="sliderCamPropTheta" Height="8" Canvas.Left="77" Canvas.Top="207" Width="199" Value="{Binding Theta}" TickFrequency="0.05" IsSnapToTickEnabled="True" SmallChange="0.05" Maximum="180" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderBinLev" Height="8" Canvas.Left="77" Canvas.Top="228" Width="199" Value="{Binding BinLevel}" TickFrequency="0.05" IsSnapToTickEnabled="True" SmallChange="0.05" Maximum="250" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderOpenCnt" Height="8" Canvas.Left="77" Canvas.Top="249" Width="199" Value="{Binding OpenCnt}" IsSnapToTickEnabled="True" SmallChange="1" Maximum="5" Style="{DynamicResource FlatSlider}"/>
+            <Slider x:Name="sliderCloseCnt" Height="8" Canvas.Left="77" Canvas.Top="270" Width="199" Value="{Binding CloseCnt}" IsSnapToTickEnabled="True" SmallChange="1" Maximum="5" Style="{DynamicResource FlatSlider}"/>
+            <Controls:ToggleSwitch x:Name="toggleSw" FontFamily="Meiryo UI" Foreground="White" ThumbIndicatorDisabledBrush="#FF1758C9" OffSwitchBrush="#FFD3DBE2" ThumbIndicatorBrush="#FF35A9D4" OnSwitchBrush="#CC0A99FD" FlowDirection="RightToLeft" OffLabel="Closing" OnLabel="Opening" Checked="toggleSw_Checked" Unchecked="toggleSw_Unchecked" HorizontalAlignment="Left" Width="152" HorizontalContentAlignment="Right" Height="32" Canvas.Left="141" Canvas.Top="5" />
+        </Canvas>
+        <Border BorderBrush="#FF00DCFF" BorderThickness="1" Height="368" Width="649" Canvas.Left="11" Canvas.Top="2"/>
+        <Canvas x:Name="CanvasImg" Canvas.Left="16" Canvas.Top="7" Width="656" Height="363">
+            <Image x:Name="im" Stretch="UniformToFill" Source="{Binding source}" MouseLeave="im_MouseLeave" MouseEnter="im_MouseEnter" MouseMove="im_MouseMove" Width="640" Height="360" />
+            <Controls:ProgressRing x:Name="Ring" Foreground="{DynamicResource AccentColorBrush}" Canvas.Left="265" Canvas.Top="139" Height="40" Width="40" IsActive="{Binding IsActive}"/>
+            <TextBlock x:Name="tbPoint" Height="20" Canvas.Left="457" TextWrapping="Wrap" Text="XY=100/100" Width="113" Foreground="White" RenderTransformOrigin="2.258,7.602" Canvas.Top="6"/>
+            <TextBlock x:Name="tbHsv" Height="20" Canvas.Left="457" TextWrapping="Wrap" Text="HSV=100,100,100" Width="115" Foreground="White" RenderTransformOrigin="2.258,7.602" Canvas.Top="26"/>
+        </Canvas>
+        <Button x:Name="buttonSave" Content="保存"  Height="45" Canvas.Left="13" Canvas.Top="389" Width="102" FontSize="20" Style="{DynamicResource SquareButtonStyle}" Controls:ControlsHelper.ContentCharacterCasing="Normal" FontFamily="Meiryo UI" FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Click="buttonSave_Click" BorderThickness="1" Background="{x:Null}">
+        </Button>
+        <Canvas x:Name="canvasLdPoint" Height="277" Canvas.Left="121" Canvas.Top="376" Width="1049">
+            <Canvas.Resources>
+                <Style TargetType="Label">
+                    <!--<Style.Setters>コンテンツプロパティのため省略可能-->
+
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="Height" Value="26"/>
+                    <!--<Setter Property="Effect">
+
+				</Setter>-->
+                </Style>
+            </Canvas.Resources>
+            <Canvas.Background>
+                <SolidColorBrush Color="#FF4997C3" Opacity="0.2"/>
+            </Canvas.Background>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD1a"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD1b"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD1c"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD1d"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD1e"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD1f"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD1g"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD1dp"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD1h"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD1i"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD1j"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD1k"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD1l"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD1m"/>
+            <TextBlock Height="16" Canvas.Left="6" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD1n"/>
+            <Label  Content="{Binding LD1a}" Canvas.Left="42" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1b}" Canvas.Left="42" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1c}" Canvas.Left="42" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1d}" Canvas.Left="42" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1e}" Canvas.Left="42" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1f}" Canvas.Left="42" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1g}" Canvas.Left="42" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1h}" Canvas.Left="42" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1i}" Canvas.Left="42" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1j}" Canvas.Left="42" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1k}" Canvas.Left="42" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1l}" Canvas.Left="42" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1m}" Canvas.Left="42" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1n}" Canvas.Left="42" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD1dp}" Canvas.Left="42" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD2a"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD2b"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD2c"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD2d"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD2e"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD2f"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD2g"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD2h"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD2i"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD2j"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD2k"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD2l"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD2m"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD2n"/>
+            <TextBlock Height="16" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD2dp"/>
+            <Label  Content="{Binding LD2a}" Canvas.Left="148" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2b}" Canvas.Left="148" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2c}" Canvas.Left="148" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2d}" Canvas.Left="148" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2e}" Canvas.Left="148" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2f}" Canvas.Left="148" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2g}" Canvas.Left="148" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2h}" Canvas.Left="148" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2i}" Canvas.Left="148" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2j}" Canvas.Left="148" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2k}" Canvas.Left="148" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2l}" Canvas.Left="148" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2m}" Canvas.Left="148" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2n}" Canvas.Left="148" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD2dp}" Canvas.Left="148" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD3a"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD3b"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD3c"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD3d"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD3e"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD3f"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD3g"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD3h"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD3i"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD3j"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD3k"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD3l"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD3m"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD3n"/>
+            <TextBlock Height="16" Canvas.Left="214" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD3dp"/>
+            <Label  Content="{Binding LD3a}" Canvas.Left="252" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3b}" Canvas.Left="252" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3c}" Canvas.Left="252" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3d}" Canvas.Left="252" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3e}" Canvas.Left="252" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3f}" Canvas.Left="252" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3g}" Canvas.Left="252" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3h}" Canvas.Left="252" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3i}" Canvas.Left="252" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3j}" Canvas.Left="252" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3k}" Canvas.Left="252" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3l}" Canvas.Left="252" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3m}" Canvas.Left="252" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3n}" Canvas.Left="252" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD3dp}" Canvas.Left="252" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD4a"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD4b"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD4c"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD4d"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD4e"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD4f"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD4g"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD4h"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD4i"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD4j"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD4k"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD4l"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD4m"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD4n"/>
+            <TextBlock Height="16" Canvas.Left="318" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD4dp"/>
+            <Label  Content="{Binding LD4a}" Canvas.Left="356" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4b}" Canvas.Left="356" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4c}" Canvas.Left="356" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4d}" Canvas.Left="356" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4e}" Canvas.Left="356" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4f}" Canvas.Left="356" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4g}" Canvas.Left="356" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4h}" Canvas.Left="356" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4i}" Canvas.Left="356" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4j}" Canvas.Left="356" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4k}" Canvas.Left="356" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4l}" Canvas.Left="356" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4m}" Canvas.Left="356" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4n}" Canvas.Left="356" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD4dp}" Canvas.Left="356" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD5a"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD5b"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD5c"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD5d"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD5e"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD5f"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD5g"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD5h"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD5i"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD5j"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD5k"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD5l"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD5m"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD5n"/>
+            <TextBlock Height="16" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD5dp"/>
+            <Label  Content="{Binding LD5a}" Canvas.Left="460" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5b}" Canvas.Left="460" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5c}" Canvas.Left="460" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5d}" Canvas.Left="460" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5e}" Canvas.Left="460" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5f}" Canvas.Left="460" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5g}" Canvas.Left="460" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5h}" Canvas.Left="460" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5i}" Canvas.Left="460" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5j}" Canvas.Left="460" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5k}" Canvas.Left="460" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5l}" Canvas.Left="460" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5m}" Canvas.Left="460" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5n}" Canvas.Left="460" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD5dp}" Canvas.Left="460" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD6a"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD6b"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD6c"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD6d"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD6e"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD6f"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD6g"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD6h"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD6i"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD6j"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD6k"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD6l"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD6m"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD6n"/>
+            <TextBlock Height="16" Canvas.Left="526" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD6dp"/>
+            <Label  Content="{Binding LD6a}" Canvas.Left="564" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6b}" Canvas.Left="564" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6c}" Canvas.Left="564" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6d}" Canvas.Left="564" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6e}" Canvas.Left="564" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6f}" Canvas.Left="564" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6g}" Canvas.Left="564" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6h}" Canvas.Left="564" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6i}" Canvas.Left="564" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6j}" Canvas.Left="564" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6k}" Canvas.Left="564" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6l}" Canvas.Left="564" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6m}" Canvas.Left="564" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6n}" Canvas.Left="564" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD6dp}" Canvas.Left="564" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD7a"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD7b"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD7c"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD7d"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD7e"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD7f"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD7g"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD7h"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD7i"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD7j"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD7k"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD7l"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD7m"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD7n"/>
+            <TextBlock Height="16" Canvas.Left="630" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD7dp"/>
+            <Label  Content="{Binding LD7a}" Canvas.Left="668" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7b}" Canvas.Left="668" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7c}" Canvas.Left="668" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7d}" Canvas.Left="668" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7e}" Canvas.Left="668" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7f}" Canvas.Left="668" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7g}" Canvas.Left="668" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7h}" Canvas.Left="668" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7i}" Canvas.Left="668" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7j}" Canvas.Left="668" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7k}" Canvas.Left="668" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7l}" Canvas.Left="668" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7m}" Canvas.Left="668" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7n}" Canvas.Left="668" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD7dp}" Canvas.Left="668" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD8a"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD8b"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD8c"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD8d"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD8e"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD8f"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD8g"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD8h"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD8i"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD8j"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD8k"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD8l"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD8m"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD8n"/>
+            <TextBlock Height="16" Canvas.Left="734" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD8dp"/>
+            <Label  Content="{Binding LD8a}" Canvas.Left="772" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8b}" Canvas.Left="772" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8c}" Canvas.Left="772" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8d}" Canvas.Left="772" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8e}" Canvas.Left="772" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8f}" Canvas.Left="772" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8g}" Canvas.Left="772" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8h}" Canvas.Left="772" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8i}" Canvas.Left="772" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8j}" Canvas.Left="772" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8k}" Canvas.Left="772" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8l}" Canvas.Left="772" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8m}" Canvas.Left="772" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8n}" Canvas.Left="772" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD8dp}" Canvas.Left="772" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD9a"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD9b"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD9c"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="58" Width="29" Foreground="White" Text="LD9d"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="76" Width="27" Foreground="White" Text="LD9e"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="93" Width="27" Foreground="White" Text="LD9f"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="112" Width="28" Foreground="White" Text="LD9g"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="131" Width="28" Foreground="White" Text="LD9h"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="149" Width="28" Foreground="White" Text="LD9i"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="167" Width="28" Foreground="White" Text="LD9j"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="185" Width="28" Foreground="White" Text="LD9k"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="203" Width="28" Foreground="White" Text="LD9l"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="221" Width="32" Foreground="White" Text="LD9m"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="239" Width="28" Foreground="White" Text="LD9n"/>
+            <TextBlock Height="16" Canvas.Left="838" TextWrapping="Wrap" Canvas.Top="257" Width="35" Foreground="White" Text="LD9dp"/>
+            <Label  Content="{Binding LD9a}" Canvas.Left="876" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9b}" Canvas.Left="876" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9c}" Canvas.Left="876" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9d}" Canvas.Left="876" Canvas.Top="59" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9e}" Canvas.Left="876" Canvas.Top="77" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9f}" Canvas.Left="876" Canvas.Top="95" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9g}" Canvas.Left="876" Canvas.Top="113" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9h}" Canvas.Left="876" Canvas.Top="131" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9i}" Canvas.Left="876" Canvas.Top="149" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9j}" Canvas.Left="876" Canvas.Top="167" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9k}" Canvas.Left="876" Canvas.Top="185" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9l}" Canvas.Left="876" Canvas.Top="203" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9m}" Canvas.Left="876" Canvas.Top="221" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9n}" Canvas.Left="876" Canvas.Top="239" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD9dp}" Canvas.Left="876" Canvas.Top="257" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <TextBlock Height="16" Canvas.Left="948" TextWrapping="Wrap" Canvas.Top="5" Width="28" Foreground="White" Text="LD13"/>
+            <TextBlock Height="16" Canvas.Left="948" TextWrapping="Wrap" Canvas.Top="23" Width="28" Foreground="White" Text="LD14"/>
+            <TextBlock Height="16" Canvas.Left="948" TextWrapping="Wrap" Canvas.Top="41" Width="28" Foreground="White" Text="LD15"/>
+            <Label  Content="{Binding LD13}" Canvas.Left="986" Canvas.Top="5" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD14}" Canvas.Left="986" Canvas.Top="23" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+            <Label  Content="{Binding LD15}" Canvas.Left="986" Canvas.Top="41" Width="56" BorderBrush="White" BorderThickness="1" Height="16" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" />
+        </Canvas>
+        <Button x:Name="buttonLedOnOff" Content="LED全点灯"  Height="30" Canvas.Left="15" Canvas.Top="442" Width="100" FontSize="16" Style="{DynamicResource SquareButtonStyle}" Controls:ControlsHelper.ContentCharacterCasing="Normal" FontFamily="Meiryo UI" FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Click="buttonLedOnOff_Click" Background="{x:Null}" BorderThickness="1" Padding="0"/>
+        <Button x:Name="buttonLabeling" Content="ラベリング"  Height="30" Canvas.Left="15" Canvas.Top="477" Width="100" FontSize="16" Style="{DynamicResource SquareButtonStyle}" Controls:ControlsHelper.ContentCharacterCasing="Normal" FontFamily="Meiryo UI" FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderThickness="1" Padding="0" Click="buttonLabeling_Click"/>
+        <Button x:Name="buttonCalibration" Content="座標取得"  Height="30" Canvas.Left="16" Canvas.Top="512" Width="100" FontSize="16" Style="{DynamicResource SquareButtonStyle}" Controls:ControlsHelper.ContentCharacterCasing="Normal" FontFamily="Meiryo UI" FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderThickness="1" Padding="0" Click="ButtonCalibration_Click"/>
+        <TextBlock x:Name="blobPoint" Height="20" Canvas.Left="531" TextWrapping="Wrap" Text="{Binding 'BlobPoint '}" Width="113" Foreground="White" RenderTransformOrigin="2.258,7.602" Canvas.Top="339"/>
+
+
+    </Canvas>
+</Page>

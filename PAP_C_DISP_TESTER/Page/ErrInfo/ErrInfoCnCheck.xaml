@@ -1,0 +1,26 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="PAP_C_DISP_TESTER.ErrInfoCnCheck"
+	xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Height="600" Width="1300" Loaded="Page_Loaded">
+    <Canvas>
+        <Button x:Name="buttonReturn" Content="テスト画面に戻る" Height="57" Canvas.Left="10" Canvas.Top="10" Width="174" Style="{DynamicResource SquareButtonStyle}" Controls:ControlsHelper.ContentCharacterCasing="Normal" FontFamily="Meiryo UI" FontWeight="Normal" HorizontalContentAlignment="Center" FontSize="18" Click="buttonReturn_Click"  />
+        <TextBlock Height="30" Canvas.Left="23" TextWrapping="Wrap" Text="NGリスト" Canvas.Top="98" Width="119" Foreground="White" FontSize="20"/>
+        <Label Height="379" Canvas.Left="23" Content="{Binding NgList}" Canvas.Top="133" Width="232" FontSize="18" Background="{x:Null}" BorderBrush="#FF08BCFF" BorderThickness="1"/>
+        <Image Height="558" Canvas.Left="294" Canvas.Top="19" Width="682" Source="/PAP_C_DISP_TESTER;component/Resources/Pic/シルク図.jpg" IsEnabled="False"/>
+        <Rectangle x:Name="RecCN4_1" Height="91" Canvas.Left="902" Canvas.Top="337" Width="35" Visibility="{Binding VisCN6}">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FFF03CBF" Opacity="0.5"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="RecCN4_2_Copy1" Height="90" Canvas.Left="332" Canvas.Top="310" Width="28" Visibility="{Binding VisCN7}" RenderTransformOrigin="0.489,-3.333">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FFF03CBF" Opacity="0.5"/>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Canvas>
+</Page>
